@@ -16,6 +16,9 @@ app.get('/*', function (req, res) {
     );
 });
 
-app.listen(process.env.PORT || 8080, ()=>{
-  console.log("server started");
+const PORT = process.env.PORT || 4200;
+
+app.listen(PORT,  ()=>{
+  console.log("server started on" + PORT);
 });
+
