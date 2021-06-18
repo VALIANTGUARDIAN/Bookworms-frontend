@@ -1,0 +1,71 @@
+<div class="col-md-10 mx-auto">
+    <nb-card *ngIf="novelData" class="bg-light">
+        <div class="row ">
+            <div class="col-md-7 mx-auto my-auto">
+                <div class="">
+                  <img class="img-fluid" [src] ="url+novelData.avatar" alt="">
+                </div>
+            </div>
+
+            <div class="col-md-5 product-details-wrap">
+                <nb-card-body style="padding: 5rem;">
+                  <div class="product-detail-main-details">
+                    <h1 class="product-detail-name">{{novelData.title}}</h1>
+                    <div class="product-detail-price">{{novelData.price | currency:'INR'}}</div>
+                    <div class="paragraph-light">{{novelData.desc}}</div>
+                  </div>
+
+                  <div class="divider cc-white-divider"></div>
+
+                  <div class="product-informations">
+                    <ul role="list" class="w-list-unstyled">
+                      <li class="list-item">
+                          <div class="paragraph-light2">Author</div>
+                          <div class="product-detail-measurement">
+                              <div class="product-detail-unit-text">{{novelData.author}}</div>
+                          </div>
+                      </li>
+                      <li class="list-item">
+                            <div class="paragraph-light2">Genre</div>
+                            <div class="product-detail-measurement">
+
+                                <div class="product-detail-unit-text">{{novelData.genre}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="divider"></div>
+
+
+                  <div class="add-to-cart">
+                    <form class="w-commerce-commerceaddtocartform">
+                        <div role="group" class="option-list">
+                        </div>
+                          <label  class="label">Quantity</label>
+                        <div class="product-detail-cta-wrap"><input type="number" pattern="^[0-9]+$" inputmode="numeric"
+                              id="quantity" name="commerce-add-to-cart-quantity-input"
+                              min="1" class="w-commerce-commerceaddtocartquantityinput text-field cc-quantity-field"
+                              value="1">
+                            <button *ngIf="novelData.soldable" nbButton class="mt-4 button" id="hero" (click)="purchase()"> Purchase </button>
+                            <button *ngIf="novelData.rentable" nbButton class="mt-4 button" id="hero" (click)="rent()"> Rent </button>
+                            <!-- <button *ngIf="novelData.exchangable" nbButton class="mt-4 button" id="hero" (click)="checkout()"> Exchange </button> -->
+                            <button *ngIf="novelData.exchangable" nbButton class="mt-4 button" id="hero" (click)="repondToUser(novelData.user._id)">Exchange</button>
+                        </div>
+                    </form>
+
+                  </div>
+
+
+
+
+                    <!-- <div class="title">{{novelData.title}}</div>
+                    <div class="rate">{{novelData.price | currency:'INR'}}</div>
+                    <div class="description"></div>
+                    <div class="genre">{{novelData.genre}}</div>
+                    <div class="author">{{novelData.author}}</div>
+                    <button nbButton class="mt-4" > {{novelData.price | currency:'INR'}} </button> -->
+                </nb-card-body>
+            </div>
+        </div>
+    </nb-card>
+</div>

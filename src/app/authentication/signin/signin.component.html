@@ -1,0 +1,62 @@
+<div class="col-md-8 mx-auto my-auto mt-5" #body ngsReveal>
+	<div class="container" id="container">
+		<div class="form-container sign-up-container">
+			<!-- <form [formGroup]="signupform" (ngSubmit)="submitSignupForm()" novalidate [mustMatch]="['password', 'confirmPassword']"> -->
+      <form [formGroup]="signupform" (ngSubmit)="submitSignupForm()" >
+				<h1>Create Account</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>or use your email for registration</span>
+				<input type="text" placeholder="Name" name="fullname" formControlName="fullname"/>
+				<input type="email" placeholder="Email" name="email" formControlName="email"/>
+				<input type="password" placeholder="Password" name="password" formControlName="password"/>
+		    <input type="password" placeholder="Confirm Password" name="confirm" formControlName="confirm"/>
+        <input type="file" class="form-control w-50 mx-auto mt-4 "
+                          (change)="uploadAvatar($event)">
+
+                      <img [src]="imgURL" alt="" *ngIf="imgURL" class="img-fluid mt-3"
+                          style="height: 100px; width: 100px; border: 2px solid rgb(20, 17, 17);">
+
+				<button>Sign Up</button>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form class="needs-validation" novalidate [formGroup]="signinform" (ngSubmit)="submitSigninForm()">
+				<h1>Sign in</h1>
+				<div class="social-container">
+					<!-- <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> -->
+          <a class="btn   m-1" href="#!" role="button" (click)="loginWithGoogle()"><i class="fab fa-google"
+            style="font-size: 2.5rem;"></i></a>
+
+          <a class="btn   m-1" href="#!" role="button" (click)="signInWithFB()"><i class="fab fa-facebook"
+              style="font-size: 2.6rem;"></i></a>
+				</div>
+				<span>or use your account</span>
+				<input type="email" placeholder="Email" name="email" formControlName="email"/>
+				<input type="password" placeholder="Password" name="password" formControlName="password" />
+				<a [routerLink]="['/app/reset']" routerLinkActive="router-link-active" >Forgot your password?</a>
+				<button>Sign In</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1 style="color: aliceblue;">Welcome Back!</h1>
+					<p style="color: aliceblue;">To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signIn" (click)="toggleSignIn()">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1 style="color: aliceblue;">Hello, Friend!</h1>
+					<p style="color: aliceblue;">Enter your personal details and start journey with us</p>
+					<button class="ghost" id="signUp" (click)="toggleSignUp()">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
