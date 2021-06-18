@@ -19,6 +19,6 @@ app.get('/*', function (req, res) {
 const PORT = process.env.PORT || 4200;
 
 app.listen(PORT,  ()=>{
-  console.log("server started on" + PORT);
+  console.log("server started on " + PORT);
 });
 
