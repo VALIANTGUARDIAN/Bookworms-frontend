@@ -62,6 +62,7 @@ div.product-detail-price {
   line-height: 52px;
 }
 
+
 div.paragraph-light {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
@@ -341,11 +342,12 @@ div.product-detail-cta-wrap {
   line-height: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
   border: 2px solid #1bbd36;
   margin-right: 10px;
+  height: 2.5rem;
 }
 
 #hero:hover {
