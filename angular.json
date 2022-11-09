@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "bookWorms"
+  "defaultProject": "bookWorms",
+  "cli": {
+    "analytics": "04cb2e4e-0e0b-4063-9d55-63a090cdc3b2"
+  }
 }
